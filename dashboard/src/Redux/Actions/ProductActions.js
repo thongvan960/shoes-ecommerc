@@ -33,7 +33,7 @@ export const listProducts = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5000/api/products/all`,
+      `https://shoes-ecommerce-api.onrender.com/api/products/all`,
       config
     );
 
@@ -69,7 +69,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
     };
 
     await axios.delete(
-      `http://localhost:5000/api/products/${id}`,
+      `https://shoes-ecommerce-api.onrender.com/api/products/${id}`,
       config
     );
 
@@ -107,7 +107,7 @@ export const createProduct =
       };
 
       const { data } = await axios.post(
-        `http://localhost:5000/api/products/`,
+        `https://shoes-ecommerce-api.onrender.com/api/products/`,
         { name, price, description, image, countInStock },
         config
       );
@@ -133,7 +133,7 @@ export const editProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_EDIT_REQUEST });
     const { data } = await axios.get(
-      `http://localhost:5000/api/products/${id}`
+      `https://shoes-ecommerce-api.onrender.com/api/products/${id}`
     );
     dispatch({ type: PRODUCT_EDIT_SUCCESS, payload: data });
   } catch (error) {
@@ -168,7 +168,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:5000/api/products/${product._id}`,
+      `https://shoes-ecommerce-api.onrender.com/api/products/${product._id}`,
       product,
       config
     );

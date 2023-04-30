@@ -34,7 +34,7 @@ const OrderScreen = ({ match }) => {
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get(
-        "http://localhost:5000/api/config/paypal"
+        "https://shoes-ecommerce-api.onrender.com/api/config/paypal"
       );
       const script = document.createElement("script");
       script.type = "text/javascript";

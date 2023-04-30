@@ -29,7 +29,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `http://localhost:5000/api/users/login`,
+      `https://shoes-ecommerce-api.onrender.com/api/users/login`,
       { email, password },
       config
     );
@@ -82,7 +82,7 @@ export const listUser = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5000/api/users`,
+      `https://shoes-ecommerce-api.onrender.com/api/users`,
       config
     );
 

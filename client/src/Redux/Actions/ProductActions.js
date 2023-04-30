@@ -19,7 +19,7 @@ export const listProduct =
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const { data } = await axios.get(
-        `http://localhost:5000/api/products?keyword=${keyword}`
+        `https://shoes-ecommerce-api.onrender.com/api/products?keyword=${keyword}`
       );
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
@@ -38,7 +38,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
     const { data } = await axios.get(
-      `http://localhost:5000/api/products/${id}`
+      `https://shoes-ecommerce-api.onrender.com/api/products/${id}`
     );
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -70,7 +70,7 @@ export const createProductReview =
       };
 
       await axios.post(
-        `http://localhost:5000/api/products/${productId}/review`,
+        `https://shoes-ecommerce-api.onrender.com/api/products/${productId}/review`,
         review,
         config
       );

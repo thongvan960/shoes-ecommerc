@@ -27,7 +27,7 @@ export const listOrders = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5000/api/orders/all`,
+      `https://shoes-ecommerce-api.onrender.com/api/orders/all`,
       config
     );
 
@@ -63,7 +63,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `http://localhost:5000/api/orders/${id}`,
+      `https://shoes-ecommerce-api.onrender.com/api/orders/${id}`,
       config
     );
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
@@ -98,7 +98,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:5000/api/orders/${order._id}/delivered`,
+      `https://shoes-ecommerce-api.onrender.com/api/orders/${order._id}/delivered`,
       {},
       config
     );
